@@ -1,5 +1,7 @@
 package model.data_structures;
 
+import com.sun.corba.se.impl.orbutil.concurrent.ReentrantMutex;
+
 /**
  * 2019-01-23
  * Estructura de Datos Arreglo Dinamico de Strings.
@@ -59,19 +61,53 @@ public class ArregloDinamico implements IArregloDinamico {
 
 		public String darElemento(int i) {
 			// TODO implementar
-			return null;
+			if(i <=tamanoAct)
+				{
+				return elementos[i];
+				}
+			else
+			{
+				return null;
+			}
+				
 		}
 
 		public String buscar(String dato) {
 			// TODO implementar
 			// Recomendacion: Usar el criterio de comparacion natural (metodo compareTo()) definido en Strings.
-			return null;
+			String x = null;
+			for (int i = 0; i < tamanoAct; i++) {
+				String actual = elementos[i];
+				if(dato.compareTo(actual)== 0)
+				{
+				   x = actual;
+				}
+				else
+				{
+					return null;
+				}
+				
+			}
+			return x;
 		}
 
 		public String eliminar(String dato) {
 			// TODO implementar
 			// Recomendacion: Usar el criterio de comparacion natural (metodo compareTo()) definido en Strings.
-			return null;
+			
+			String eliminado = null;
+			for (int i = 0; i < elementos.length; i++) 
+			{
+				String actual = elementos[i];
+				if(actual.compareTo(dato)== 0)
+				{
+					eliminado = actual;
+					actual = elementos[i+1];
+					tamanoAct --;
+				}
+				
+			}
+			return eliminado;
 		}
 
 }
