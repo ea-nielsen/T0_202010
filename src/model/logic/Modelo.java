@@ -53,7 +53,7 @@ public class Modelo {
 	 * @param dato Dato a buscar
 	 * @return dato encontrado
 	 */
-	public String buscar(String dato)
+	public <T>T buscar(T dato)
 	{
 		return datos.buscar(dato);
 	}
@@ -63,7 +63,7 @@ public class Modelo {
 	 * @param dato Dato a eliminar
 	 * @return dato eliminado
 	 */
-	public String eliminar(String dato)
+	public <T>T eliminar(T dato)
 	{
 		return datos.eliminar(dato);
 	}

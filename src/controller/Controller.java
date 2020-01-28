@@ -5,7 +5,7 @@ import java.util.Scanner;
 import model.logic.Modelo;
 import view.View;
 
-public class Controller {
+public class Controller <T extends Comparable<T>>{
 
 	/* Instancia del Modelo*/
 	private Modelo modelo;
@@ -46,7 +46,7 @@ public class Controller {
 				case 2:
 					view.printMessage("--------- \nDar cadena (simple) a ingresar: ");
 					dato = lector.next();
-					modelo.agregar(dato);
+					modelo.<T>agregar(dato);
 					view.printMessage("Dato agregado");
 					view.printMessage("Numero actual de elementos " + modelo.darTamano() + "\n---------");						
 					break;

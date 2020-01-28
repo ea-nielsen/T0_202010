@@ -61,8 +61,8 @@ public class TestModelo {
 	public void testEliminar() {
 		setUp2();
 		setUp1();
-		assertEquals(null, modelo.eliminar("" +300));
-		assertTrue(modelo.eliminar(""+ 1).compareTo(""+ 1) ==0);
+		assertEquals(null, modelo.eliminar(300));
+		assertTrue(modelo.eliminar( 1).compareTo( 1) ==0);
 		
 		// TODO Completar la prueba
 		
